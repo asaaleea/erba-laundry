@@ -1,7 +1,5 @@
-// dashboard.js — FITUR Layar 1: Dashboard
+// DASHBOARD (vDash membuat HTML-nya)
 
-// ===== LAYAR 1: DASHBOARD (vDash membuat HTML-nya) =====
-// Membuat HTML Layar 1: Dashboard
 function vDash() {
     const live = orders.filter(o => !o.done);
     const td = orders.filter(o => o.c === 0);
@@ -35,7 +33,6 @@ function vDash() {
           <h3>Siap diserahkan</h3>${rdy.map(o => li(o, payB(o))).join('') || '<p class="cap">Belum ada cucian yang selesai.</p>'}</article></div>`;
 }
 
-// ----- Aksi tombol untuk fitur ini (didaftarkan ke objek A di shared.js) -----
 // go = klik jalur tahap / "Lihat semua": pasang filter lalu pindah ke Daftar Cucian
 Object.assign(A, {
     go: (d) => {
