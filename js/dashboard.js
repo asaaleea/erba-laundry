@@ -41,4 +41,4 @@ Object.assign(A, {
     go: (d) => {
         flt = { q: '', st: d.f ?? '', pay: '' };
     }
-});
+});`    `
