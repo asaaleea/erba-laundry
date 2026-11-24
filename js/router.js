@@ -1,7 +1,4 @@
-// router.js — pindah layar berdasarkan #hash di URL
-
-// ===== 6. ROUTER: pindah layar berdasarkan #hash di URL (#dashboard, #cucian, dst.) =====
-/* router */
+//  6. ROUTER: pindah layar berdasarkan #hash di URL (#dashboard, #cucian, dst.)
 
 const R = ['dashboard', 'pesanan-baru', 'cucian', 'laporan', 'cek-status'];
 

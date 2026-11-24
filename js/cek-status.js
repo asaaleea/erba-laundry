@@ -1,6 +1,6 @@
-// cek-status.js — FITUR Layar 5: Cek Status (pelanggan)
+//FITUR Layar 5: Cek Status (pelanggan)
 
-// ===== LAYAR 5: CEK STATUS PELANGGAN (vCek = halaman, showRes = hasil + stepper) =====
+//LAYAR 5: CEK STATUS PELANGGAN (vCek = halaman, showRes = hasil + stepper)
 // Membuat HTML Layar 5: Cek Status untuk pelanggan
 function vCek() {
     return `<div class="pub">

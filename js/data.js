@@ -1,7 +1,4 @@
-// data.js — data pesanan contoh (di memori; hilang saat refresh)
-
-// ===== 3. DATA PESANAN CONTOH (disimpan di memori, hilang saat refresh) =====
-// mk() = membuat 1 pesanan lalu memasukkannya ke array orders
+// DATA PESANAN CONTOH (disimpan di memori, hilang saat refresh)
 let orders = [];
 
 // Membuat SATU pesanan lalu memasukkannya ke array orders

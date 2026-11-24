@@ -1,5 +1,4 @@
 const $ = s => document.querySelector(s);
-
 const $$ = s => [...document.querySelectorAll(s)];
 
 // Mengubah angka jadi format Rupiah, mis. 52500 -> Rp52.500

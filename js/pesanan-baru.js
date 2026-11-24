@@ -1,6 +1,4 @@
-// pesanan-baru.js — FITUR Layar 2: Pesanan Baru + nota digital
-
-// ===== LAYAR 2: PESANAN BARU =====
+//LAYAR 2: PESANAN BARU
 // vForm = HTML formulir | calc/upRb = hitung & tampilkan rincian biaya | bindForm = validasi, isi otomatis, simpan | showNota = dialog nota
 // Membuat HTML Layar 2: formulir pesanan baru
 function vForm() {

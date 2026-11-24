@@ -1,6 +1,6 @@
 // shared.js — dipakai banyak fitur: status bayar, state filter, toast, dialog, aksi klik
 
-// ===== 4. FUNGSI STATUS & PEMBAYARAN =====
+// FUNGSI STATUS & PEMBAYARAN
 // payS = status bayar (Lunas/Sebagian/Belum), sisa = sisa tagihan, validWa = cek format nomor WA
 // Mencari pelanggan lama berdasarkan nomor WhatsApp
 const cust = wa => [...orders].reverse().find(o => o.wa === wa);
@@ -59,7 +59,6 @@ function toast(m) {
     toast.h = setTimeout(() => t.innerHTML = '', 3000);
 }
 
-/* dialog */
 
 // Membuka dialog konfirmasi (judul, isi, tombol Batal & OK)
 function ask({ title, body, ok, danger, cancel = 'Batal', onOk, extra }) {
@@ -97,8 +96,6 @@ const derr = m => {
     e.hidden = !m;
     e.textContent = '⚠ ' + m;
 };
-
-/* shells */
 
 // ===== AKSI TOMBOL (dipakai semua fitur) =====
 // Tombol HTML berisi data-act="nama". Satu listener klik memanggil fungsi A[nama].

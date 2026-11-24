@@ -1,6 +1,6 @@
-// layout.js — kerangka halaman petugas (sidebar + konten) dan header halaman
+// kerangka halaman petugas (sidebar + konten) dan header halaman
 
-// ===== 5. KERANGKA HALAMAN: sidebar + konten =====
+// KERANGKA HALAMAN: sidebar + konten
 const NAV = [['dashboard', 'Dashboard'], ['pesanan-baru', 'Pesanan Baru'], ['cucian', 'Daftar Cucian'], ['laporan', 'Laporan']];
 
 // Membungkus sebuah layar dengan sidebar menu

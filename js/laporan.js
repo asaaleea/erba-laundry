@@ -1,7 +1,6 @@
-// laporan.js — FITUR Layar 4: Laporan & Riwayat Transaksi
+//FITUR Layar 4: Laporan & Riwayat Transaksi
+// LAYAR 4: LAPORAN (hitung omzet per hari & per layanan dari data pesanan) =====
 
-// ===== LAYAR 4: LAPORAN (hitung omzet per hari & per layanan dari data pesanan) =====
-// Membuat HTML Layar 4: Laporan (hitung omzet per hari & per layanan)
 function vRep() {
     const L = orders.filter(o => o.c >= rep.f && o.c <= rep.t);
     const om = L.reduce((s, o) => s + o.total, 0);

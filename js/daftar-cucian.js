@@ -1,6 +1,6 @@
-// daftar-cucian.js — FITUR Layar 3: Daftar Cucian & Status
+//FITUR Layar 3: Daftar Cucian & Status
 
-// ===== LAYAR 3: DAFTAR CUCIAN =====
+//LAYAR 3: DAFTAR CUCIAN
 // fltOrders = saring data | rowActs = tombol aksi per baris | tbl = isi tabel | setStage = ubah tahap + catat riwayat
 // Menyaring pesanan sesuai pencarian dan filter
 const fltOrders = () => orders.filter(o => {
