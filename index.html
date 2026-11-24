@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Erba Laundry</title>
+  <!-- Font Plus Jakarta Sans dari Google Fonts (butuh internet; kalau offline otomatis pakai font sistem) -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Semua tampilan ada di style.css -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Tempat semua layar ditampilkan oleh app.js -->
+  <div id="app"></div>
+  <!-- Dialog (konfirmasi, nota) memakai elemen native <dialog> -->
+  <dialog id="dlg" aria-labelledby="dt"></dialog>
+  <!-- Tempat notifikasi kecil (toast) -->
+  <div id="toast" role="status" aria-live="polite"></div>
+  <!-- Logika dipecah per fitur. URUTAN PENTING: helpers/data/shared dulu, fitur di tengah, main paling akhir -->
+  <script src="js/helpers.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/pesanan-baru.js"></script>
+  <script src="js/daftar-cucian.js"></script>
+  <script src="js/laporan.js"></script>
+  <script src="js/cek-status.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
