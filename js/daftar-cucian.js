@@ -13,27 +13,33 @@ function rowActs(o) {
     if (o.done) {
         return '<span class="cap">Selesai diserahkan</span>';
     }
-    let a = '';
+    // Tombol utama (berwarna) di atas selebar kolom, tombol tambahan (garis) di bawahnya 2 kolom
+    let utama = '';
+    let lain = '';
     if (o.stage < 4) {
-        a += `<button class="btn sm" data-act="next" data-id="${o.id}">Jadikan ${ST[o.stage + 1].toLowerCase()}</button>`;
+        utama += `<button class="btn sm" data-act="next" data-id="${o.id}">Jadikan ${ST[o.stage + 1].toLowerCase()}</button>`;
     }
-    a += `<button class="btn wa sm" data-act="wa" data-id="${o.id}" ${o.stage < 4 ? 'disabled title="Aktif setelah status Selesai"' : ''}>Kabari via WA</button>`;
+    // Tombol WA baru muncul setelah cucian Selesai
+    if (o.stage === 4) {
+        utama += `<button class="btn wa sm" data-act="wa" data-id="${o.id}">${o.ws === 'Gagal' ? 'Kirim ulang WA' : 'Kabari via WA'}</button>`;
+    }
+    let info = '';
     if (o.ws === 'Terkirim') {
-        a += badge('Terkirim', 'ok', '✓');
+        info = badge('WA terkirim', 'ok', '✓');
     }
     if (o.ws === 'Gagal') {
-        a += badge('Gagal', 'er', '⚠') + `<button class="btn o sm" data-act="wa" data-id="${o.id}">Kirim ulang</button>`;
+        info = badge('WA gagal terkirim', 'er', '⚠');
     }
     if (sisa(o) > 0) {
-        a += `<button class="btn o sm" data-act="pay" data-id="${o.id}">Catat bayar</button>`;
+        lain += `<button class="btn o sm" data-act="pay" data-id="${o.id}">Catat bayar</button>`;
     }
     if (o.stage === 4) {
-        a += `<button class="btn o sm" data-act="take" data-id="${o.id}">Tandai diambil</button>`;
+        lain += `<button class="btn o sm" data-act="take" data-id="${o.id}">Tandai diambil</button>`;
     }
     if (o.stage > 0) {
-        a += `<button class="btn o sm" data-act="fix" data-id="${o.id}">Koreksi status</button>`;
+        lain += `<button class="btn o sm" data-act="fix" data-id="${o.id}">Koreksi status</button>`;
     }
-    return `<div class="acts">${a}</div>`;
+    return `<div class="row-acts">${utama}${lain}</div>${info ? `<div class="wa-info">${info}</div>` : ''}`;
 }
 
 // Mengisi isi tabel Daftar Cucian
@@ -48,10 +54,9 @@ function tbl() {
         <div class="cap">${esc(o.wa)}</div></td>
         <td>${SV[o.sv][0]}
         <div class="cap">${String(o.berat).replace('.', ',')} kg</div></td>
-        <td>${stB(o)}</td>
-        <td>${o.done ? '—' : o.due < 0 && o.stage < 4 ? '<span class="late">⚠ Lewat tenggat</span>' : o.due === 0 ? 'Hari ini' : fd(o.due)}</td>
+        <td>${stB(o)}${o.done ? '' : `<div class="cap">${o.due < 0 && o.stage < 4 ? '<span class="late">⚠ Lewat tenggat</span>' : 'Tenggat ' + (o.due === 0 ? 'hari ini' : fd(o.due))}</div>`}</td>
         <td>${payB(o)}${sisa(o) > 0 ? `<div class="cap">Sisa ${rp(sisa(o))}</div>` : ''}</td>
-        <td>${rowActs(o)}</td></tr>`).join('') || '<tr><td colspan="7" class="cap">Tidak ada pesanan yang cocok dengan filter.</td></tr>';
+        <td>${rowActs(o)}</td></tr>`).join('') || '<tr><td colspan="6" class="cap">Tidak ada pesanan yang cocok dengan filter.</td></tr>';
 }
 
 // Membuat HTML Layar 3: Daftar Cucian
@@ -66,14 +71,13 @@ function vList() {
         <select id="fp" aria-label="Filter pembayaran">
           <option value="">Semua pembayaran</option>${['Lunas', 'Dibayar sebagian', 'Belum dibayar'].map(s => `<option ${flt.pay === s ? 'selected' : ''}>${s}</option>`).join('')}</select></search>
         <div class="scroll">
-          <table>
+          <table class="tbl-cucian">
             <thead>
               <tr>
                 <th>Pesanan</th>
                 <th>Pelanggan</th>
                 <th>Layanan</th>
-                <th>Status</th>
-                <th>Tenggat</th>
+                <th>Status &amp; tenggat</th>
                 <th>Pembayaran</th>
                 <th>Aksi</th></tr></thead>
             <tbody id="tb"></tbody></table></div></section>`;

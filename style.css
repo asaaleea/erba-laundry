@@ -597,6 +597,62 @@ td.r {
   align-items: center;
 }
 
+/* ===== Tabel Daftar Cucian: jarak lebih lega & tombol aksi dua baris ===== */
+.tbl-cucian th,
+.tbl-cucian td {
+  padding: 16px 12px;
+}
+
+.tbl-cucian th {
+  padding-top: 8px;
+  padding-bottom: 10px;
+}
+
+.tbl-cucian td .cap {
+  margin-top: 4px;
+}
+
+/* No. pesanan dan nama tidak terpotong ke baris baru */
+.tbl-cucian td:nth-child(1) .b {
+  white-space: nowrap;
+}
+
+.tbl-cucian td:nth-child(4) .cap {
+  margin-top: 8px;
+}
+
+.tbl-cucian .late {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.tbl-cucian tbody tr:hover {
+  background: var(--neu-bg);
+}
+
+/* Kolom aksi: tombol utama selebar kolom, tombol tambahan 2 kolom sama lebar */
+.tbl-cucian td:last-child {
+  width: 260px;
+}
+
+.row-acts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.row-acts .btn {
+  justify-content: center;
+}
+
+.row-acts .btn:not(.o) {
+  grid-column: 1 / -1;
+}
+
+.wa-info {
+  margin-top: 8px;
+}
+
 .filters {
   display: flex;
   gap: 8px;
