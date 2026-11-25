@@ -61,6 +61,7 @@ function vForm() {
           <h3>Rincian biaya</h3>
           <div id="rb"></div>
           <button class="btn full" id="sv" type="submit" style="margin-top:16px">Simpan pesanan</button></aside></form>`;
+        <button class="btn full" id="sv" type="submit" style="margin-top:16px">coba</button></aside></form>`;
 }
 
 const num = v => parseFloat(String(v).replace(/\./g, '').replace(',', '.'));
