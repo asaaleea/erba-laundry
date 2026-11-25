@@ -1,2 +1,1 @@
-// titik mulai aplikasi
 route();

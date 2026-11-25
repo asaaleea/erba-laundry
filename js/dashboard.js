@@ -1,4 +1,4 @@
-// DASHBOARD (vDash membuat HTML-nya)
+// DASHBOARD
 
 function vDash() {
     const live = orders.filter(o => !o.done);

@@ -1,5 +1,4 @@
-/* ===== 1. TOKEN DESAIN (warna dari Bab 2.2 laporan) =====
-   Variabel --nama dipakai ulang di seluruh CSS. Ubah di sini, semua ikut berubah. */
+/* Desain */
 :root {
   --bg: #F6F9FE;
   --card: #fff;
@@ -71,7 +70,7 @@ html {
   scroll-padding-top: env(safe-area-inset-top,0px);
 }
 
-/* ===== 2. DASAR: font, ukuran judul (skala tipografi Bab 2.1) ===== */
+/* font, ukuran judul */
 * {
   box-sizing: border-box;
 }
@@ -129,7 +128,7 @@ a {
   border-radius: 6px;
 }
 
-/* ===== 3. LAYOUT: sidebar 240px + area konten ===== */
+/* 3. LAYOUT: sidebar 240px + area konten */
 .shell {
   display: grid;
   grid-template-columns: 240px 1fr;
@@ -214,7 +213,7 @@ a {
   flex-wrap: wrap;
 }
 
-/* ===== 4. KOMPONEN: kartu, grid, tombol ===== */
+/* KOMPONEN: kartu, grid, tombol */
 .card {
   background: var(--card);
   border: 1px solid var(--line);
@@ -343,7 +342,7 @@ a {
   margin-top: 4px;
 }
 
-/* ===== 5. DASHBOARD: jalur 5 tahap cucian ===== */
+/* DASHBOARD: jalur 5 tahap cucian */
 .track {
   display: flex;
   align-items: flex-start;
@@ -560,7 +559,7 @@ textarea:focus-visible {
   margin-bottom: 16px;
 }
 
-/* ===== 8. TABEL ===== */
+/*  8. TABEL */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -635,7 +634,7 @@ td.r {
   margin-bottom: 16px;
 }
 
-/* ===== 9. DIALOG (konfirmasi & nota) dan TOAST ===== */
+/* DIALOG (konfirmasi & nota) dan TOAST */
 dialog {
   border: 0;
   border-radius: 16px;
@@ -717,7 +716,7 @@ dialog::backdrop {
   margin-bottom: 16px;
 }
 
-/* ===== 10. HALAMAN PELANGGAN (Cek Status) + stepper ===== */
+/* HALAMAN PELANGGAN (Cek Status) + stepper */
 .pub {
   max-width: 760px;
   margin: 0 auto;
@@ -811,7 +810,7 @@ dialog::backdrop {
   color: var(--act);
 }
 
-/* ===== 11. RESPONSIF: tampilan ponsel & cetak ===== */
+/* RESPONSIF: tampilan ponsel & cetak*/
 @media(max-width:900px) {
   .shell {
     display: block;
