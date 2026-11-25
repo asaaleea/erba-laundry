@@ -1,5 +1,3 @@
-// kerangka halaman petugas (sidebar + konten) dan header halaman
-
 // KERANGKA HALAMAN: sidebar + konten
 const NAV = [['dashboard', 'Dashboard'], ['pesanan-baru', 'Pesanan Baru'], ['cucian', 'Daftar Cucian'], ['laporan', 'Laporan']];
 
